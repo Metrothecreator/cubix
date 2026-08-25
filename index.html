@@ -226,10 +226,10 @@ button{border:none;background:none;cursor:pointer;font-family:inherit;color:inhe
 .wa-divider{height:1px;background:var(--mid);margin:.4rem 0}
 
 /* ── SECOND SEQUENCE ── */
-#seq2-section{position:relative;width:100%;background:var(--black)}
-.seq2-pin{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;background:var(--black)}
-#seq2-canvas{position:absolute;inset:0;width:100%;height:100%;filter:contrast(1.1) saturate(1.1) brightness(1.05);}
-.seq2-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 80% 80% at 50% 50%,transparent 20%,rgba(8,8,8,.5) 100%),linear-gradient(to bottom,rgba(8,8,8,.7) 0%,rgba(8,8,8,.0) 18%,rgba(8,8,8,.0) 55%,rgba(8,8,8,.85) 100%);}
+#seq2-section{position:relative;width:100%;background:#0a0a0a}
+.seq2-pin{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;background:#0a0a0a}
+#seq2-canvas{position:absolute;inset:0;width:100%;height:100%;filter:contrast(1.08) saturate(0.95) brightness(1.1) sepia(0.08);}
+.seq2-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 90% 90% at 50% 50%,transparent 35%,rgba(8,8,8,.35) 100%),linear-gradient(to bottom,rgba(8,8,8,.55) 0%,transparent 15%,transparent 70%,rgba(8,8,8,.65) 100%);}
 .seq2-copy{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
 .seq2-label{font-size:.58rem;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-shadow:0 1px 8px rgba(0,0,0,.9);}
 .seq2-title{font-family:var(--fd);font-size:clamp(2.5rem,6vw,6rem);font-weight:300;font-style:italic;color:#fff;text-align:center;line-height:1;text-shadow:0 2px 30px rgba(0,0,0,.9);}
@@ -252,6 +252,9 @@ button{border:none;background:none;cursor:pointer;font-family:inherit;color:inhe
 .pj-loc{font-size:.65rem;color:var(--silver);letter-spacing:.1em;margin-top:.25rem}
 .pj-enquire{display:inline-flex;align-items:center;gap:.5rem;margin-top:.8rem;font-size:.56rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(240,192,48,.3);padding-bottom:1px;transition:border-color .3s;}
 .pj-enquire:hover{border-color:var(--gold)}
+.pj-mini{overflow:hidden;aspect-ratio:4/3;border-radius:0}
+.pj-mini img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pj-mini:hover img{transform:scale(1.05)}
 
 /* ── FOUNDERS ── */
 #founders{background:var(--cream);color:var(--black);padding:9rem 0}
@@ -268,6 +271,8 @@ button{border:none;background:none;cursor:pointer;font-family:inherit;color:inhe
 .fo-body{font-size:.88rem;font-weight:300;line-height:1.85;color:#222;max-width:420px}
 .fo-contact{display:inline-flex;align-items:center;gap:.6rem;margin-top:1rem;font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--black);border-bottom:1px solid rgba(0,0,0,.25);padding-bottom:2px;transition:color .3s,border-color .3s;}
 .fo-contact:hover{color:var(--gold2);border-color:var(--gold2)}
+.fo-socials{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.fo-socials .fo-contact{margin-top:0}
 .fo-story{margin-top:5rem;padding-top:4rem;border-top:1px solid rgba(0,0,0,.1)}
 .fo-story-title{font-family:var(--fd);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;letter-spacing:-.01em;color:var(--black);margin-bottom:2rem}
 .fo-story-body{font-size:clamp(.9rem,1.2vw,1.05rem);font-weight:300;line-height:1.9;color:#1a1a1a;max-width:720px}
@@ -458,6 +463,64 @@ button{border:none;background:none;cursor:pointer;font-family:inherit;color:inhe
   </div>
 </section>
 
+<!-- FOUNDERS -->
+<section id="founders" class="sec">
+  <div class="wrap">
+    <p class="s-label rv">The Team</p>
+    <h2 class="fo-intro rv">THE PEOPLE<br/><em>BEHIND CUBIX.</em></h2>
+    <div class="fo-grid">
+      <div class="fo-card rv">
+        <div class="fo-img-wrap rvc"><img src="assets/arc-muhammed.jpeg" alt="Arc. Mohammed Sadiq" loading="lazy"/></div>
+        <div>
+          <h3 class="fo-name">Arc. Mohammed Sadiq</h3>
+          <p class="fo-role">Co-Founder · Principal Architect</p>
+          <p class="fo-body">A licensed architect with a proven track record in high-level, precise architectural design and construction. Arc. Mohammed co-founded CUBIX to bring a new standard of quality and professionalism to the Nigerian construction landscape.</p>
+          <div class="fo-socials">
+            <button class="fo-contact" onclick="openWADirect('2347066693803','Arc. Mohammed')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              WhatsApp
+            </button>
+            <a class="fo-contact" href="https://www.instagram.com/cubixhomesng" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a class="fo-contact" href="https://www.tiktok.com/@cubixhomesng" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.17 8.17 0 004.84 1.56V6.84a4.85 4.85 0 01-1.07-.15z"/></svg>
+              TikTok
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="fo-card rv">
+        <div class="fo-img-wrap rvc"><img src="assets/arc-chimzy.jpeg" alt="Arc. Chimzy Owhonda" loading="lazy"/></div>
+        <div>
+          <h3 class="fo-name">Arc. Chimzy Owhonda</h3>
+          <p class="fo-role">Co-Founder · Principal Architect</p>
+          <p class="fo-body">A licensed architect bringing deep real estate experience and building professionalism to every CUBIX project. Arc. Chimzy ensures that your building investment is at its safest — from concept to completion.</p>
+          <div class="fo-socials">
+            <button class="fo-contact" onclick="openWADirect('2347078396158','Arc. Chimzy')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              WhatsApp
+            </button>
+            <a class="fo-contact" href="https://www.instagram.com/cubixhomesng" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a class="fo-contact" href="https://www.tiktok.com/@cubixhomesng" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.17 8.17 0 004.84 1.56V6.84a4.85 4.85 0 01-1.07-.15z"/></svg>
+              TikTok
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fo-story">
+      <h3 class="fo-story-title rv">WHY WE<br/><em>STARTED CUBIX.</em></h3>
+      <p class="fo-story-body rv">CUBIX Homes and Investment Limited was founded in July 2024 by two young professionals who saw a gap in the Nigerian construction industry — a gap between what clients deserved and what was being delivered. Armed with architectural licenses, real estate experience, and an unwavering commitment to quality, Arc. Chimzy and Arc. Mohammed set out to build a company that would treat every project as a personal statement of excellence. Today, CUBIX has delivered high-profile projects across Lagos, Abuja and Port Harcourt — and this is only the beginning.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about" class="sec">
   <div class="wrap">
@@ -477,9 +540,9 @@ button{border:none;background:none;cursor:pointer;font-family:inherit;color:inhe
         </div>
       </div>
       <div class="ab-imgs">
-        <div class="ab-img rvc"><img src="assets/project6.jpeg" alt="CUBIX completed residential project" loading="lazy"/></div>
-        <div class="ab-img rvc"><img src="assets/project5.jpeg" alt="CUBIX architectural design" loading="lazy"/></div>
-        <div class="ab-img rvc"><img src="assets/project7.jpeg" alt="CUBIX construction exterior" loading="lazy"/></div>
+        <div class="ab-img rvc"><img src="assets/real12.jpg" alt="CUBIX completed residential project" loading="lazy"/></div>
+        <div class="ab-img rvc"><img src="assets/real8.jpg" alt="CUBIX architectural finishing" loading="lazy"/></div>
+        <div class="ab-img rvc"><img src="assets/real7.jpg" alt="CUBIX construction in progress" loading="lazy"/></div>
       </div>
     </div>
   </div>
@@ -559,8 +622,8 @@ button{border:none;background:none;cursor:pointer;font-family:inherit;color:inhe
     <canvas id="seq2-canvas" role="img" aria-label="CUBIX project transformation"></canvas>
     <div class="seq2-overlay"></div>
     <div class="seq2-copy">
-      <p class="seq2-label">The CUBIX Process</p>
-      <h2 class="seq2-title">FROM<br/><em>GROUND UP.</em></h2>
+      <p class="seq2-label">Built By Hand. Designed With Purpose.</p>
+      <h2 class="seq2-title">EVERY<br/><em>DETAIL COUNTS.</em></h2>
     </div>
     <div class="seq2-prog"><div id="seq2-fill"></div></div>
   </div>
@@ -577,47 +640,25 @@ button{border:none;background:none;cursor:pointer;font-family:inherit;color:inhe
       <p class="rv" style="max-width:240px;font-size:.8rem;font-weight:300;color:var(--silver);line-height:1.8">A selection of completed and ongoing projects across Nigeria.</p>
     </div>
     <div class="pj-grid">
-      <div class="pj-card rv"><img src="assets/project1.jpeg" alt="CUBIX luxury villa, Abuja" loading="lazy"/><div class="pj-tag">Residential</div><div class="pj-info"><p class="pj-cat">Residential · Architecture</p><h3 class="pj-name">Luxury Villa — Abuja</h3><p class="pj-loc">FCT, Nigeria</p><button class="pj-enquire" onclick="openWAProject('Luxury Villa Abuja')">Enquire →</button></div></div>
-      <div class="pj-card rv"><img src="assets/project2.jpeg" alt="CUBIX premium duplex, Lagos" loading="lazy"/><div class="pj-tag">Architecture</div><div class="pj-info"><p class="pj-cat">Architecture · Visualization</p><h3 class="pj-name">Premium Duplex — Lagos</h3><p class="pj-loc">Lekki, Lagos</p><button class="pj-enquire" onclick="openWAProject('Premium Duplex Lagos')">Enquire →</button></div></div>
-      <div class="pj-card rv"><img src="assets/project6.jpeg" alt="CUBIX semi-detached duplex" loading="lazy"/><div class="pj-tag">Completed</div><div class="pj-info"><p class="pj-cat">Construction · Residential</p><h3 class="pj-name">Semi-Detached Duplex</h3><p class="pj-loc">Lagos, Nigeria</p><button class="pj-enquire" onclick="openWAProject('Semi-Detached Duplex Lagos')">Enquire →</button></div></div>
-      <div class="pj-card rv"><img src="assets/project3.jpeg" alt="CUBIX contemporary residence" loading="lazy"/><div class="pj-tag">Architecture</div><div class="pj-info"><p class="pj-cat">Architecture · Rendering</p><h3 class="pj-name">Contemporary Residence</h3><p class="pj-loc">Abuja, Nigeria</p><button class="pj-enquire" onclick="openWAProject('Contemporary Residence Abuja')">Enquire →</button></div></div>
-      <div class="pj-card rv"><img src="assets/project4.jpeg" alt="CUBIX modern duplex" loading="lazy"/><div class="pj-tag">Residential</div><div class="pj-info"><p class="pj-cat">Residential · Construction</p><h3 class="pj-name">Modern Duplex</h3><p class="pj-loc">Port Harcourt, Nigeria</p><button class="pj-enquire" onclick="openWAProject('Modern Duplex Port Harcourt')">Enquire →</button></div></div>
-      <div class="pj-card rv"><img src="assets/project7.jpeg" alt="CUBIX residential build" loading="lazy"/><div class="pj-tag">Completed</div><div class="pj-info"><p class="pj-cat">Construction · Completed</p><h3 class="pj-name">Residential Build</h3><p class="pj-loc">Lagos, Nigeria</p><button class="pj-enquire" onclick="openWAProject('Residential Build Lagos')">Enquire →</button></div></div>
+      <div class="pj-card rv"><img src="assets/real12.jpg" alt="CUBIX completed duplex" loading="lazy"/><div class="pj-tag">Completed</div><div class="pj-info"><p class="pj-cat">Residential · Construction</p><h3 class="pj-name">4-Bedroom Duplex</h3><p class="pj-loc">Lagos, Nigeria</p><button class="pj-enquire" onclick="openWAProject('4-Bedroom Duplex Lagos')">Enquire →</button></div></div>
+      <div class="pj-card rv"><img src="assets/real7.jpg" alt="CUBIX construction site — block laying" loading="lazy"/><div class="pj-tag">In Progress</div><div class="pj-info"><p class="pj-cat">Construction · Active Site</p><h3 class="pj-name">Residential Build — Phase 2</h3><p class="pj-loc">Abuja, FCT</p><button class="pj-enquire" onclick="openWAProject('Residential Build Abuja')">Enquire →</button></div></div>
+      <div class="pj-card rv"><img src="assets/real11.jpg" alt="CUBIX building construction walls" loading="lazy"/><div class="pj-tag">In Progress</div><div class="pj-info"><p class="pj-cat">Construction · Masonry</p><h3 class="pj-name">Commercial Build</h3><p class="pj-loc">Abuja, FCT</p><button class="pj-enquire" onclick="openWAProject('Commercial Build Abuja')">Enquire →</button></div></div>
+      <div class="pj-card rv"><img src="assets/real9.jpg" alt="CUBIX blue column framework" loading="lazy"/><div class="pj-tag">Foundation</div><div class="pj-info"><p class="pj-cat">Structural · Engineering</p><h3 class="pj-name">Foundation & Framework</h3><p class="pj-loc">Lagos, Nigeria</p><button class="pj-enquire" onclick="openWAProject('Foundation Lagos')">Enquire →</button></div></div>
+      <div class="pj-card rv"><img src="assets/real8.jpg" alt="CUBIX finished building exterior" loading="lazy"/><div class="pj-tag">Completed</div><div class="pj-info"><p class="pj-cat">Finishing · Exterior</p><h3 class="pj-name">Rendered Exterior Finish</h3><p class="pj-loc">Port Harcourt</p><button class="pj-enquire" onclick="openWAProject('Exterior Finish Port Harcourt')">Enquire →</button></div></div>
+      <div class="pj-card rv"><img src="assets/real3.jpg" alt="CUBIX architect on site inspection" loading="lazy"/><div class="pj-tag">Site Work</div><div class="pj-info"><p class="pj-cat">Architecture · Supervision</p><h3 class="pj-name">Site Supervision — Abuja</h3><p class="pj-loc">FCT, Nigeria</p><button class="pj-enquire" onclick="openWAProject('Site Supervision Abuja')">Enquire →</button></div></div>
+    </div>
+    <!-- Additional real project photos gallery -->
+    <div class="pj-extra-grid rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin-top:.8rem">
+      <div class="pj-mini"><img src="assets/real4.jpg" alt="CUBIX bricklaying" loading="lazy"/></div>
+      <div class="pj-mini"><img src="assets/real5.jpg" alt="CUBIX wall construction" loading="lazy"/></div>
+      <div class="pj-mini"><img src="assets/real6.jpg" alt="CUBIX block laying" loading="lazy"/></div>
+      <div class="pj-mini"><img src="assets/real10.jpg" alt="CUBIX team on site" loading="lazy"/></div>
+      <div class="pj-mini"><img src="assets/real2.jpg" alt="CUBIX site overview" loading="lazy"/></div>
+      <div class="pj-mini"><img src="assets/real1.jpg" alt="CUBIX completed project" loading="lazy"/></div>
     </div>
   </div>
 </section>
 
-<!-- FOUNDERS -->
-<section id="founders" class="sec">
-  <div class="wrap">
-    <p class="s-label rv">The Team</p>
-    <h2 class="fo-intro rv">THE PEOPLE<br/><em>BEHIND CUBIX.</em></h2>
-    <div class="fo-grid">
-      <div class="fo-card rv">
-        <div class="fo-img-wrap rvc"><img src="assets/arc-chimzy.jpeg" alt="Arc. Chimzy Owhonda" loading="lazy"/></div>
-        <div>
-          <h3 class="fo-name">Arc. Chimzy Owhonda</h3>
-          <p class="fo-role">Co-Founder · Board Director</p>
-          <p class="fo-body">A licensed architect with a proven track record in high-level, precise architectural design and construction. Arc. Chimzy co-founded CUBIX to bring a new standard of quality and professionalism to the Nigerian construction landscape.</p>
-          <button class="fo-contact" onclick="openWADirect('2347078396158','Arc. Chimzy')">Contact Arc. Chimzy →</button>
-        </div>
-      </div>
-      <div class="fo-card rv">
-        <div class="fo-img-wrap rvc"><img src="assets/arc-muhammed.jpeg" alt="Arc. Mohammed Sadiq" loading="lazy"/></div>
-        <div>
-          <h3 class="fo-name">Arc. Mohammed Sadiq</h3>
-          <p class="fo-role">Co-Founder · Board Director</p>
-          <p class="fo-body">A licensed architect bringing deep real estate experience and building professionalism to every CUBIX project. Arc. Mohammed's expertise ensures that your building investment is at its safest — from concept to completion.</p>
-          <button class="fo-contact" onclick="openWADirect('2347066693803','Arc. Mohammed')">Contact Arc. Mohammed →</button>
-        </div>
-      </div>
-    </div>
-    <div class="fo-story">
-      <h3 class="fo-story-title rv">WHY WE<br/><em>STARTED CUBIX.</em></h3>
-      <p class="fo-story-body rv">CUBIX Homes and Investment Limited was founded in July 2024 by two young professionals who saw a gap in the Nigerian construction industry — a gap between what clients deserved and what was being delivered. Armed with architectural licenses, real estate experience, and an unwavering commitment to quality, Arc. Chimzy and Arc. Mohammed set out to build a company that would treat every project as a personal statement of excellence. Today, CUBIX has delivered high-profile projects across Lagos, Abuja and Port Harcourt — and this is only the beginning.</p>
-    </div>
-  </div>
-</section>
 
 <!-- WHY CUBIX -->
 <section id="why" class="sec">
@@ -648,6 +689,66 @@ button{border:none;background:none;cursor:pointer;font-family:inherit;color:inhe
     </div>
   </div>
 </section>
+
+<!-- REACH US -->
+<section id="reach" style="background:var(--charcoal);padding:5rem 0;border-top:1px solid var(--mid)">
+  <div class="wrap">
+    <p class="s-label rv" style="color:var(--gold)">Find Us Everywhere</p>
+    <h2 class="rv" style="font-family:var(--fd);font-size:clamp(2rem,4vw,4rem);font-weight:300;letter-spacing:-.01em;margin-bottom:3rem">REACH US<br/><em>YOUR WAY.</em></h2>
+    <div class="reach-grid rv">
+      <button class="reach-card" onclick="openWA()">
+        <div class="reach-icon" style="background:rgba(37,211,102,.15);color:#25d166">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </div>
+        <p class="reach-name">WhatsApp</p>
+        <p class="reach-handle">+234 706 669 3803</p>
+      </button>
+      <a class="reach-card" href="https://www.instagram.com/cubixhomesng" target="_blank" rel="noopener">
+        <div class="reach-icon" style="background:rgba(225,48,108,.15);color:#e1306c">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <p class="reach-name">Instagram</p>
+        <p class="reach-handle">@cubixhomesng</p>
+      </a>
+      <a class="reach-card" href="https://www.tiktok.com/@cubixhomesng" target="_blank" rel="noopener">
+        <div class="reach-icon" style="background:rgba(255,255,255,.08);color:#fff">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.17 8.17 0 004.84 1.56V6.84a4.85 4.85 0 01-1.07-.15z"/></svg>
+        </div>
+        <p class="reach-name">TikTok</p>
+        <p class="reach-handle">@cubixhomesng</p>
+      </a>
+      <a class="reach-card" href="https://www.facebook.com/cubixhomesng" target="_blank" rel="noopener">
+        <div class="reach-icon" style="background:rgba(24,119,242,.15);color:#1877f2">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </div>
+        <p class="reach-name">Facebook</p>
+        <p class="reach-handle">Cubix Homes</p>
+      </a>
+      <a class="reach-card" href="mailto:hello@cubixhomes.com">
+        <div class="reach-icon" style="background:rgba(240,192,48,.15);color:var(--gold)">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <p class="reach-name">Email</p>
+        <p class="reach-handle">hello@cubixhomes.com</p>
+      </a>
+      <a class="reach-card" href="tel:+2347066693803">
+        <div class="reach-icon" style="background:rgba(240,192,48,.12);color:var(--gold)">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <p class="reach-name">Phone</p>
+        <p class="reach-handle">+234 706 669 3803</p>
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+.reach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
+.reach-card{display:flex;flex-direction:column;align-items:center;gap:.8rem;padding:2rem 1.5rem;border:1px solid var(--mid);text-align:center;transition:border-color .3s,background .3s;cursor:pointer;text-decoration:none;color:var(--white);background:transparent;font-family:var(--fb)}
+.reach-card:hover{border-color:var(--gold);background:rgba(240,192,48,.04)}
+.reach-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.reach-name{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--white)}
+.reach-handle{font-size:.72rem;font-weight:300;color:var(--silver)}
+</style>
 
 <!-- FOOTER -->
 <footer id="footer">
@@ -691,8 +792,9 @@ button{border:none;background:none;cursor:pointer;font-family:inherit;color:inhe
     <div class="ft-bot">
       <p class="ft-copy">© 2026 CUBIX Homes and Investment Limited. All rights reserved.</p>
       <div class="ft-soc">
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://www.instagram.com/cubixhomesng" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@cubixhomesng" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
+        <a href="https://www.facebook.com/cubixhomesng" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
         <button onclick="openWA()" style="font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);transition:color .3s;background:none;border:none;cursor:pointer;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--grey)'">WhatsApp</button>
       </div>
     </div>
